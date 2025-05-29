@@ -3,7 +3,7 @@ name: Preprocess Avocado Ripeness Data
 on:
   push:
     paths:
-      - "avocado_ripeness_dataset.csv"
+      - "data/avocado_ripeness_dataset.csv"
       - "preprocessing/automate_jafar-shodiq.py"
   workflow_dispatch:
 
