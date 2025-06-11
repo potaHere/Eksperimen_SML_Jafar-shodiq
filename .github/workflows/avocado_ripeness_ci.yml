@@ -1,5 +1,8 @@
 name: Preprocess Avocado Ripeness Data
 
+permissions:
+  contents: write
+
 on:
   push:
     paths:
@@ -36,4 +39,4 @@ jobs:
         git add preprocessing/avocado_ripeness_dataset_preprocessed.csv
         git commit -m 'Update preprocessed avocado ripeness data' || echo "No changes to commit"
         git pull --rebase
-        git push
+        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
